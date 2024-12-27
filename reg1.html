@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Registration Page</title>
+</head>
+<body>
+
+<form id="registration-page" action="#" onsubmit="check(); return false;">
+  <center>
+    Name: <input type="text" name="name" id="uname"><br><br>
+    Address: <input type="text" name="address" id="uaddr"><br><br>
+    Age: <input type="number" name="num" id="uage"><br><br>
+    Mobile Number: <input type="text" name="mnum" id="umnum"><br><br>
+    Email: <input type="email" name="email" id="uemail"><br><br>
+    <label>Gender:</label>
+    Female: <input type="radio" name="gender" value="Female" id="f">
+    Male: <input type="radio" name="gender" value="Male" id="m"><br><br>
+    <input type="submit" value="Proceed">
+  </center>
+</form>
+
+<script>
+function check() {
+  let a = document.getElementById("uname").value;
+  let b = document.getElementById("uaddr").value;
+  let c = document.getElementById("uage").value;
+  let d = document.getElementById("umnum").value;
+  let e = document.getElementById("uemail").value;
+  let f = document.querySelector('input[name="gender"]:checked');
+
+  if (a === '' || b === '' || c === '' || d === '' || e === '' || !f) {
+    alert("Fill in all fields");
+    return;
+  }
+
+  if (d.length !== 10) {
+    alert("Mobile number should be 10 digits only");
+    return;
+  }
+
+  if (!e.includes('@')) {
+    alert("Email should include '@' symbol");
+    return;
+  }
+
+  // Proceed with form submission or further processing
+  alert("Form submitted successfully!");
+  // Add code here to proceed with form submission or further processing
+}
+</script>
+
+</body>
+</html>
